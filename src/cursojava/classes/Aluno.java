@@ -1,5 +1,8 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno {
 	/*atributo*/
 	String nome;
@@ -11,31 +14,10 @@ public class Aluno {
 	String nomePai;
 	String dataMatricula;
 	
-	public double getNota1() {
-		return nota1;
-	}
-	public void setNota1(double nota1) {
-		this.nota1 = nota1;
-	}
-	public double getNota2() {
-		return nota2;
-	}
-	public void setNota2(double nota2) {
-		this.nota2 = nota2;
-	}
-	public double getNota3() {
-		return nota3;
-	}
-	public void setNota3(double nota3) {
-		this.nota3 = nota3;
-	}
-	public double getNota4() {
-		return nota4;
-	}
-	public void setNota4(double nota4) {
-		this.nota4 = nota4;
-	}
-	double nota1,nota2,nota3,nota4;
+	Diciplina diciplina = new Diciplina();
+	/*lista*/
+	List<Diciplina> diciplina1 = new ArrayList<Diciplina>();
+	
 	
 	public String getNome() {
 		return nome;
@@ -87,7 +69,8 @@ public class Aluno {
 	}
 	
 	public double getMediaNota() {
-		return (nota1 + nota2 + nota3 + nota4) / 4;
+		return (diciplina.getNota1() + diciplina.getNota2() 
+		+ diciplina.getNota3() + diciplina.getNota4()) / 4;
 	}
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
@@ -97,4 +80,11 @@ public class Aluno {
 			return false;
 		}
 	}
+	public Diciplina getDiciplina() {
+		return diciplina;
+	}
+	public void setDiciplina(Diciplina diciplina) {
+		this.diciplina = diciplina;
+	}
+	
 }
